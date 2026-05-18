@@ -35,7 +35,7 @@
 
 <!-- SKILLS SECTION -->
 <div class="section">
-    <h2>Skills</h2>
+    <h2>Tech Stack</h2>
     <div id="skills"></div>
 </div>
 
@@ -47,20 +47,18 @@
 
 <script>
 /* ---------------- SKILLS ---------------- */
-fetch('/api/v1/skills/')
+fetch('/api/v1/stacks/')
 .then(response => response.json())
 .then(data => {
 
-    const container = document.getElementById('skills')
+    const container = document.getElementById('stacks')
 
     let html = ""
 
-    data.forEach(skill => {
+    data.forEach(stack => {
         html += `
             <div class="card">
-                <h3>${skill.name}</h3>
-                <p>Level:{skill.level}</p>
-                ${skill.icon ? `<img src="${skill.icon}" width="50">` : ''}
+                <h3>${stack.name}</h3>
             </div>
         `
     })
