@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 class SkillAdmin(admin.ModelAdmin):
-    list_display = ('name', 'percentage')
+    list_display = ('name', 'level')
     list_display_links = ('name',)
 
 

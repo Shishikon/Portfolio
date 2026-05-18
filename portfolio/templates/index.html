@@ -59,7 +59,7 @@ fetch('/api/v1/skills/')
         html += `
             <div class="card">
                 <h3>${skill.name}</h3>
-                <p>Level: ${skill.percentage ?? 'N/A'}</p>
+                <p>Level:{skill.level}</p>
                 ${skill.icon ? `<img src="${skill.icon}" width="50">` : ''}
             </div>
         `
