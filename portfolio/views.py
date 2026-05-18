@@ -32,24 +32,5 @@ class EducationListApi(generics.ListAPIView):
     serializer_class = EducationSerializer
 
 
-
-
 def home(request):
-    skills = Skill.objects.all()
-    projects = Project.objects.all()
-    about = About.objects.all()
-    certifications = Certification.objects.all()
-    education = Education.objects.all()
-
-    context = {
-        "skills": skills,
-        "projects": projects,
-        "about": about,
-        "certifications": certifications,
-        "education": education
-    }
-
-
-
-
-    return render(request, 'index.html', context)
+    return render(request, 'index.html')

@@ -9,18 +9,21 @@ class SkillSerializer(serializers.ModelSerializer):
 
 
 class ProjectsSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(use_url=True)
     class Meta:
         model = Project
         fields = "__all__"
 
 
 class AboutSerializer(serializers.ModelSerializer):
+    profile_image = serializers.ImageField(use_url=True)
     class Meta:
         model = About
         fields = "__all__"
 
 
 class CertificationsSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(use_url=True)
     class Meta:
         model = Certification
         fields = "__all__"
