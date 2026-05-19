@@ -1,17 +1,14 @@
-from django.core.serializers import serialize
 from django.shortcuts import render
 from rest_framework import generics
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
 
-from .serializers import SkillSerializer, ProjectsSerializer, AboutSerializer, CertificationsSerializer, EducationSerializer
-from .models import Skill, Project, About, Certification, Education
+from api.v1.serializers import TechStackSerializer, ProjectsSerializer, AboutSerializer, CertificationsSerializer, EducationSerializer
+from .models import TechStack, Project, About, Certification, Education
 
 
 
-class SkillListApi(generics.ListAPIView):
-    queryset = Skill.objects.all()
-    serializer_class = SkillSerializer
+class TechStackListApi(generics.ListAPIView):
+    queryset = TechStack.objects.all()
+    serializer_class = TechStackSerializer
 
 class ProjectListApi(generics.ListAPIView):
     queryset = Project.objects.all()

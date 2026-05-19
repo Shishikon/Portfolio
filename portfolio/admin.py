@@ -1,8 +1,8 @@
 from django.contrib import admin
 from .models import *
 
-class SkillAdmin(admin.ModelAdmin):
-    list_display = ('name', 'percentage')
+class TechStackAdmin(admin.ModelAdmin):
+    list_display = ('name',)
     list_display_links = ('name',)
 
 
@@ -26,7 +26,7 @@ class EducationAdmin(admin.ModelAdmin):
     list_display_links = ('institution', 'degree')
 
 
-admin.site.register(Skill, SkillAdmin)
+admin.site.register(TechStack, TechStackAdmin)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Certification, CertificationAdmin)

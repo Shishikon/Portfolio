@@ -35,7 +35,7 @@
 
 <!-- SKILLS SECTION -->
 <div class="section">
-    <h2>Skills</h2>
+    <h2>Tech Stack</h2>
     <div id="skills"></div>
 </div>
 
@@ -45,28 +45,49 @@
     <div id="projects"></div>
 </div>
 
+<!-- ABOUT SECTION -->
+<div class="section">
+    <h2>About</h2>
+    <div id="about"></div>
+</div>
+
+<!-- EDUCATION SECTION -->
+<div class="section">
+    <h2>Education</h2>
+    <div id="education"></div>
+</div>
+
+
+<!-- CERTIFICATIONS SECTION -->
+<div class="section">
+    <h2>Certifications</h2>
+    <div id="certifications"></div>
+</div>
+
 <script>
 /* ---------------- SKILLS ---------------- */
-fetch('/api/v1/skills/')
+fetch('/api/v1/stacks/')
 .then(response => response.json())
 .then(data => {
 
-    const container = document.getElementById('skills')
+    const container = document.getElementById('stacks')
 
     let html = ""
 
-    data.forEach(skill => {
+    data.forEach(stack => {
         html += `
             <div class="card">
-                <h3>${skill.name}</h3>
-                <p>Level: ${skill.percentage ?? 'N/A'}</p>
-                ${skill.icon ? `<img src="${skill.icon}" width="50">` : ''}
+                <h3>${stack.name}</h3>
             </div>
         `
     })
 
     container.innerHTML = html
 })
+
+/* ---------------- SKILLS ---------------- */
+
+
 
 
 /* ---------------- PROJECTS ---------------- */
@@ -90,6 +111,86 @@ fetch('/api/v1/projects/')
 
     container.innerHTML = html
 })
+/* ---------------- PROJECTS ---------------- */
+
+
+
+
+/* ---------------- ABOUT ---------------- */
+fetch('/api/v1/about/')
+.then(response => response.json())
+.then(data => {
+
+    const container = document.getElementById('about')
+
+    let html = ""
+
+    data.forEach(ab => {
+        html += `
+            <div class="card">
+                <h3>${ab.full_name}</h3>
+                <p>${ab.profession ?? ''}</p>
+                ${ab.profile_image ? `<img src="${ab.profile_image}" width="50">` : ''}
+            </div>
+        `
+    })
+
+    container.innerHTML = html
+})
+/* ---------------- ABOUT ---------------- */
+
+
+
+/* ---------------- EDUCATION ---------------- */
+fetch('/api/v1/education/')
+.then(response => response.json())
+.then(data => {
+
+    const container = document.getElementById('education')
+
+    let html = ""
+
+    data.forEach(edu => {
+        html += `
+            <div class="card">
+                <h3>${edu.institution}</h3>
+                <p>${edu.degree ?? ''}</p>
+                <p>${edu.field_of_study ?? ''}</p>
+            </div>
+        `
+    })
+
+    container.innerHTML = html
+})
+/* ---------------- EDUCATION ---------------- */
+
+
+
+/* ---------------- CERTIFICATIONS ---------------- */
+fetch('/api/v1/certifications/')
+.then(response => response.json())
+.then(data => {
+
+    const container = document.getElementById('certifications')
+
+    let html = ""
+
+    data.forEach(certification => {
+        html += `
+            <div class="card">
+                <h3>${certification.title}</h3>
+                <p>${certification.organization ?? ''}</p>
+                ${certification.image ? `<img src="${certification.image}" width="50">` : ''}
+            </div>
+        `
+    })
+
+    container.innerHTML = html
+})
+/* ---------------- CERTIFICATIONS ---------------- */
+
+
+
 
 </script>
 
