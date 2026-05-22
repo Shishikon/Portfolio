@@ -5,6 +5,8 @@ from api.v1.serializers import TechStackSerializer, ProjectsSerializer, AboutSer
 from .models import TechStack, Project, About, Certification, Education
 
 
+def home(request):
+    return render(request, 'home.html')
 
 class TechStackListApi(generics.ListAPIView):
     queryset = TechStack.objects.all()
@@ -29,5 +31,3 @@ class EducationListApi(generics.ListAPIView):
     serializer_class = EducationSerializer
 
 
-def home(request):
-    return render(request, 'home.html')
