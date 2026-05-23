@@ -20,11 +20,9 @@ class AboutListApi(generics.ListAPIView):
     queryset = About.objects.all()
     serializer_class = AboutSerializer
 
-
 class CertificationListApi(generics.ListAPIView):
     queryset = Certification.objects.all()
     serializer_class = CertificationsSerializer
-
 
 class EducationListApi(generics.ListAPIView):
     queryset = Education.objects.all()
