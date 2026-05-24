@@ -20,19 +20,7 @@
   <body class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
 
     <!-- INTRO -->
-    <section class="intro dark-overlay bg-cover bg-fixed bg-center d-flex align-items-center" id="intro" style="background-image: url({% static 'img/ein-steig.jpg'%});">
-      <div class="overlay-content w-100 text-white">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7 col-md-12 mx-auto">
-              <!-- Name/profession from About API -->
-              <h1 class="text-uppercase intro-heading text-uppercase letter-spacing-2" id="intro-name">Loading...</h1>
-              <p class="fst-italic intro-text mb-0" id="intro-profession"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+{% include 'sub_templates/intro.html' %}
     <!-- intro end-->
 
 
@@ -46,108 +34,28 @@
 {% include 'sub_templates/about.html' %}
     <!-- about end-->
 
-    <!-- SERVICES (Tech Stack) -->
-    <section class="bg-gray-200" id="services">
-      <div class="container">
-        <div class="row services">
-          <div class="col-lg-12">
-            <h2 class="underline text-uppercase">Tech Stack</h2>
-            <div class="row gy-4 gx-5" id="skills-container">
-              <!-- filled by JS -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- services end-->
+    <!-- Tech Stack -->
+{% include 'sub_templates/stack.html' %}
+    <!-- Tech Stack end-->
 
     <!-- PORTFOLIO / PROJECTS -->
-    <section id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-lg-8">
-            <h2 class="underline text-uppercase">Portfolio</h2>
-          </div>
-        </div>
-        <div class="row g-4" id="projects-container">
-          <!-- filled by JS -->
-        </div>
-      </div>
-    </section>
+{% include 'sub_templates/projects.html' %}
     <!-- portfolio end-->
 
     <!-- EDUCATION -->
-    <section class="bg-gray-200" id="education">
-      <div class="container">
-        <h2 class="underline text-uppercase">Education</h2>
-        <div class="row gy-4" id="education-container">
-          <!-- filled by JS -->
-        </div>
-      </div>
-    </section>
+{% include 'sub_templates/education.html' %}
     <!-- education end -->
 
     <!-- CERTIFICATIONS -->
-    <section id="certifications">
-      <div class="container">
-        <h2 class="underline text-uppercase">Certifications</h2>
-        <div class="row gy-4" id="certifications-container">
-          <!-- filled by JS -->
-        </div>
-      </div>
-    </section>
+{% include 'sub_templates/cert.html' %}
     <!-- certifications end -->
 
     <!-- CONTACT -->
-    <section class="pb-5 " id="contact">
-      <div class="container">
-        <h2 class="underline">Contact</h2>
-        <div class="row gy-4 justify-content-center align-items-center">
-          <div class="col-lg-8 mx-auto">
-            <form class="contact-form" id="contact-form" method="post">
-              <div class="row gy-3">
-                <div class="col-md-6">
-                  <label class="form-label" for="name">Your firstname *</label>
-                  <input class="form-control" type="text" name="name" placeholder="Enter your firstname" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" for="lastname">Your lastname *</label>
-                  <input class="form-control" type="text" name="surname" placeholder="Enter your lastname" required>
-                </div>
-                <div class="col-12">
-                  <label class="form-label" for="email">Your email *</label>
-                  <input class="form-control" type="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="col-12">
-                  <label class="form-label" for="message">Your message for us *</label>
-                  <textarea class="form-control" rows="4" name="message" placeholder="Enter your message" required></textarea>
-                </div>
-                <div class="col-12 text-center">
-                  <input class="btn btn-outline-primary w-100" type="submit" name="name" value="Send message">
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-lg-6">
-            <p id="contact-info"></p>
-            <p id="contact-social"></p>
-          </div>
-        </div>
-      </div>
-    </section>
+
+{% include 'components/footer.html' %}
 
 
 
-    <footer class="bg-black text-gray-100 py-5">
-      <div class="container py-4">
-        <div class="row copyright gy-2">
-          <div class="col-md-6">
-            <p class="fst-italic mb-0 text-center text-md-start" id="footer-name">&copy; 2024</p>
-          </div>
-
-        </div>
-      </div>
-    </footer>
 
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
