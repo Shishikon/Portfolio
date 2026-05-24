@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shishikon</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&amp;family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'vendor/glightbox/css/glightbox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/leaflet/leaflet.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.default.css' %}" id="theme-stylesheet">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+  </head>
+  <body class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
+
+    <!-- INTRO -->
+<section class="intro dark-overlay bg-cover bg-fixed bg-center d-flex align-items-center" id="intro" style="background-image: url({% static 'img/ein-steig.jpg'%});">
+      <div class="overlay-content w-100 text-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-md-12 mx-auto">
+              <!-- Name/profession from About API -->
+              <h1 class="text-uppercase intro-heading text-uppercase letter-spacing-2" id="intro-name">Loading...</h1>
+              <p class="fst-italic intro-text mb-0" id="intro-profession"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- intro end-->
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top border-bottom border-gray-200 bg-white py-lg-0" id="navbar">
+      <div class="container"><a class="navbar-brand" href="/">Black and White</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link py-lg-3 active" href="#intro">Home</a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#stack">Stacks</a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#certifications">Certifications</a></li>
+            <li class="nav-item"><a class="nav-link py-lg-3" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- NAVBAR end-->
+
+    <!-- ABOUT -->
+
+<section id="about">
+      <div class="container">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-6">
+            <h2 class="underline text-uppercase">About me</h2>
+            <p class="lead" id="about-profession"></p>
+            <p id="about-bio"></p>
+            <p id="about-description"></p>
+          </div>
+          <div class="col-lg-5 mx-auto text-center">
+            <img class="img-fluid rounded-circle" id="about-image" src="" alt="Profile photo" style="display:none;">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about end-->
+
+    <!-- Tech Stack -->
+    <section class="bg-gray-200" id="stack">
+      <div class="container">
+        <div class="row stacks">
+          <div class="col-lg-12">
+            <h2 class="underline text-uppercase">Tech Stack</h2>
+            <div class="row gy-4 gx-5" id="skills-container">
+              <!-- filled by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Tech Stack end-->
+
+    <!-- PORTFOLIO / PROJECTS -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <h2 class="underline text-uppercase">Portfolio</h2>
+          </div>
+        </div>
+        <div class="row g-4" id="projects-container">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </section>
+    <!-- portfolio end-->
+
+    <!-- EDUCATION -->
+    <section class="bg-gray-200" id="education">
+      <div class="container">
+        <h2 class="underline text-uppercase">Education</h2>
+        <div class="row gy-4" id="education-container">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </section>
+    <!-- education end -->
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="container">
+        <h2 class="underline text-uppercase">Certifications</h2>
+        <div class="row gy-4" id="certifications-container">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </section>
+    <!-- certifications end -->
+
+    <!-- CONTACT -->
+    <section class="pb-5 " id="contact">
+      <div class="container">
+        <h2 class="underline">Contact</h2>
+        <div class="row gy-4 justify-content-center align-items-center">
+          <div class="col-lg-8 mx-auto">
+            <form class="contact-form" id="contact-form" method="post">
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="name">Your firstname *</label>
+                  <input class="form-control" type="text" name="name" placeholder="Enter your firstname" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="lastname">Your lastname *</label>
+                  <input class="form-control" type="text" name="surname" placeholder="Enter your lastname" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="email">Your email *</label>
+                  <input class="form-control" type="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="message">Your message for us *</label>
+                  <textarea class="form-control" rows="4" name="message" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <input class="btn btn-outline-primary w-100" type="submit" name="name" value="Send message">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6">
+            <p id="contact-info"></p>
+            <p id="contact-social"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CONTACT end-->
+
+    <!-- FOOTER-->
+    <footer class="bg-black text-gray-100 py-5">
+      <div class="container py-4">
+        <div class="row copyright gy-2">
+          <div class="col-md-6">
+            <p class="fst-italic mb-0 text-center text-md-start" id="footer-name">&copy; 2024</p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER end-->
+
+
+
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/leaflet/leaflet.js' %}"></script>
+    <script src="{% static 'js/leaflet.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+
+    <!--MAIN-->
+    <script>
+
+
+      /* ---------------- ABOUT ---------------- */
+      fetch('/api/v1/about/')
+        .then(r => r.json())
+        .then(data => {
+          const ab = data[0]  // assuming single about object
+          if (!ab) return
+
+          // Intro section
+          document.getElementById('intro-name').textContent = ab.full_name ?? ''
+          document.getElementById('intro-profession').textContent = ab.profession ?? ''
+
+          // About section
+          document.getElementById('about-profession').textContent = ab.profession ?? ''
+          document.getElementById('about-bio').textContent = ab.bio ?? ''
+
+          // About section
+          document.getElementById('about-description').textContent = ab.description ?? ''
+          document.getElementById('about-description').textContent = ab.description ?? ''
+
+          if (ab.profile_image) {
+            const img = document.getElementById('about-image')
+            img.src = ab.profile_image
+            img.style.display = 'block'
+          }
+
+          // Footer
+          document.getElementById('footer-name').textContent = `© ${new Date().getFullYear()} ${ab.full_name ?? ''}`
+        })
+
+
+      /* ---------------- TECH STACK (Services) ---------------- */
+      fetch('/api/v1/stacks/')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('skills-container')
+          let html = ''
+          data.forEach(stack => {
+            html += `
+              <div class="col-md-4">
+                <div class="mb-4"><i class="fas fa-code fa-3x"></i></div>
+                <h5>${stack.name}</h5>
+                <p>${stack.description ?? ''}</p>
+              </div>
+            `
+          })
+          container.innerHTML = html
+        })
+
+
+/* ---------------- PROJECTS (Portfolio) ---------------- */
+fetch('/api/v1/projects/')
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('projects-container')
+    let html = ''
+
+    data.forEach(project => {
+      html += `
+<div class="col-lg-6">
+
+          <a class="glightbox d-block"
+             href="${project.image ?? '#'}"
+             data-gallery="gallery"
+             data-glightbox="${project.title}">
+
+            ${project.image
+              ? `<img class="img-fluid" style="border-radius: 15px;" src="${project.image}" alt="${project.title}">`
+              : `<div class="bg-gray-200 d-flex align-items-center justify-content-center" style="height:200px;">
+                   <span>${project.title}</span>
+                 </div>`
+            }
+
+          </a>
+
+               <h5 class="project-title text-center mt-4 mb-3 w-100">
+                  ${project.title}
+               </h5>
+
+
+          <div class="project-info">
+
+            <div class="project-description">
+              <h6>Description</h6>
+              <p>${project.description ?? ''}</p>
+            </div>
+
+            <div class="project-divider"></div>
+
+            <div class="project-stack">
+              <h6>Tools</h6>
+              <p>${project.technologies ?? ''}</p>
+            </div>
+
+          </div>
+
+        </div>
+      `
+    })
+
+    container.innerHTML = html
+  })
+
+      /* ---------------- EDUCATION ---------------- */
+      fetch('/api/v1/education/')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('education-container')
+          let html = ''
+          data.forEach(edu => {
+            html += `
+              <div class="col-md-6">
+                <div class="border rounded p-3">
+                  <h5>${edu.institution}</h5>
+                  <p class="mb-1">${edu.degree ?? ''}</p>
+                  <p class="text-muted">${edu.field_of_study ?? ''}</p>
+                </div>
+              </div>
+            `
+          })
+          container.innerHTML = html
+        })
+
+
+      /* ---------------- CERTIFICATIONS ---------------- */
+      fetch('/api/v1/certifications/')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('certifications-container')
+          let html = ''
+          data.forEach(cert => {
+            html += `
+              <div class="col-md-4">
+                <div class="border rounded p-3">
+                  ${cert.image ? `<img src="${cert.image}" width="60" class="mb-2">` : ''}
+                  <h5>${cert.title}</h5>
+                  <p class="text-muted">${cert.organization ?? ''}</p>
+                  <p class="text-muted">${cert.issue_date ?? ''}</p>
+                </div>
+              </div>
+            `
+          })
+          container.innerHTML = html
+        })
+
+
+    </script>
+    <!--MAIN-->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  </body>
+</html>
