@@ -6,7 +6,7 @@ from .models import TechStack, Project, About, Certification, Education
 
 
 def home(request):
-    return render(request, '_test.html')
+    return render(request, 'home.html')
 
 class TechStackListApi(generics.ListAPIView):
     queryset = TechStack.objects.all()
